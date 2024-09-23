@@ -25,7 +25,7 @@ local QuitDivider = Main:Divider{
 local missionFarm = Main:Toggle{
    Name = "Farm Quest Green",
    Description = "Farm Quest Green",
-   Callback = function(farmMission)
+   Callback = function Farm(Mission)
       function farmMission()
     while missionFarm do
         for _, mission in pairs(game:GetService("Workspace").Missions:GetChildren()) do
@@ -43,7 +43,7 @@ end
 local bossFarm = Main:Toggle{
    Name = "Farm Boss",
    Description = "FarmBoss",
-   Callback = function(farmBoss)
+   Callback = function Farm(Boss)
        function farmBoss()
     while bossFarm do
         for _, boss in pairs(game:GetService("Workspace").Bosses:GetChildren()) do
@@ -61,7 +61,7 @@ end
 local bigBossFarm = Main:Toggle{
    Name = "Big Boss Farm",
    Description = "Big Boss Farm",
-   Callback = function(farmBigBoss)
+   Callback = function Farm(BigBoss)
        function farmBigBoss()
     while bigBossFarm do
         for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
@@ -79,7 +79,7 @@ end
 local autcoltscrll = Main:Toggle{
    Name = "autoCollectScroll",
    Description = "autoCollectScroll",
-   Callback = function(autoCollectScroll)
+   Callback = function AutoCollect(Scroll)
        function autoCollectScroll()
     while true do
         for _, scroll in pairs(game:GetService("Workspace").Scrolls:GetChildren()) do
