@@ -12,7 +12,7 @@ local bossFarm = true
 local bigBossFarm = true
 
 
-Section:NewToggle("Kill All", "ToggleInfo", function(state)
+Main:NewToggle("Farm Mission", "Farm Mission", function Farm(Mission)
     if state then
         function farmMission()
     while missionFarm do
@@ -34,7 +34,8 @@ end)
       
 
 
-
+Main:NewToggle("Farm Boss", "Farm Boss", function Farm(Boss)
+    if state then
        function farmBoss()
     while bossFarm do
         for _, boss in pairs(game:GetService("Workspace").Bosses:GetChildren()) do
@@ -47,10 +48,15 @@ end)
     end
 end
    end
+else
+        print("Toggle Off")
+    end
+end)
 
 
-
-       function farmBigBoss()
+ Main:NewToggle("Farm Big Boss", "Farm Big Boss", function Farm(BigBoss)
+    if state then      
+function farmBigBoss()
     while bigBossFarm do
         for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
             if bigBoss:FindFirstChild("Humanoid") then
@@ -62,10 +68,15 @@ end
     end
 end
    end
+else
+        print("Toggle Off")
+    end
+end)
 
 
-
-       function autoCollectScroll()
+       Main:NewToggle("Auto Collect Scroll", "Auto Collect Scroll", function autoCollect(Scroll)
+    if state then
+function autoCollectScroll()
     while true do
         for _, scroll in pairs(game:GetService("Workspace").Scrolls:GetChildren()) do
             if scroll:IsA("Part") then
@@ -77,12 +88,7 @@ end
     end
 end
    end
-
-
---local KillAll = Divider:Toggle{
-   --Name = "Kill all",
-   --Description = "Kills all the players in the game!",
- --  Callback = function()
-    --   print("All players killed.")
-  -- end
---}
+else
+        print("Toggle Off")
+    end
+end)
