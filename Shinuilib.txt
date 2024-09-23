@@ -14,8 +14,8 @@ local Main = UI:Tab{
    Name = "Main"
 }
 
-local Divider = Main:Divider{
-   Name = "Main shit"
+local Divider = UI:Tab{
+   Name = "Quit"
 }
 
 local QuitDivider = Main:Divider{
