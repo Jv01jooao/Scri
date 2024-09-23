@@ -22,7 +22,7 @@ local QuitDivider = Main:Divider{
    Name = "Quit"
 }
 
-local missionFarm = Divider:Toggle{
+local missionFarm = Main:Toggle{
    Name = "Farm Quest Green",
    Description = "Farm Quest Green",
    Callback = function(farmMission)
@@ -40,7 +40,7 @@ end
    end
 }
 
-local bossFarm = Divider:Toggle{
+local bossFarm = Main:Toggle{
    Name = "Farm Boss",
    Description = "FarmBoss",
    Callback = function(farmBoss)
@@ -58,7 +58,7 @@ end
    end
 }
 
-local bigBossFarm = Divider:Toggle{
+local bigBossFarm = Main:Toggle{
    Name = "Big Boss Farm",
    Description = "Big Boss Farm",
    Callback = function(farmBigBoss)
@@ -76,7 +76,7 @@ end
    end
 }
 
-local autcoltscrll = Divider:Toggle{
+local autcoltscrll = Main:Toggle{
    Name = "autoCollectScroll",
    Description = "autoCollectScroll",
    Callback = function(autoCollectScroll)
@@ -100,4 +100,4 @@ end
  --  Callback = function()
     --   print("All players killed.")
   -- end
-}
+--}
