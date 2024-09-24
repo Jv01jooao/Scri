@@ -2,7 +2,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 
 local Window = Library.CreateLib("jvshind hub", "DarkTheme")
 local Tab = Window:NewTab("Main")
-local Section = Tab:NewSection("LocalPlayer")
+local Section = Main:NewSection("Script")
 
 
 
@@ -12,7 +12,7 @@ local bossFarm = true
 local bigBossFarm = true
 
 
-Main:NewToggle("Farm Mission", "Farm Mission", function Farm(Mission)
+Script:NewToggle("Farm Mission", "Farm Mission", function Farm(Mission)
     if state then
         function farmMission()
     while missionFarm do
@@ -34,7 +34,7 @@ end)
       
 
 
-Main:NewToggle("Farm Boss", "Farm Boss", function Farm(Boss)
+Script:NewToggle("Farm Boss", "Farm Boss", function Farm(Boss)
     if state then
        function farmBoss()
     while bossFarm do
@@ -54,7 +54,7 @@ else
 end)
 
 
- Main:NewToggle("Farm Big Boss", "Farm Big Boss", function Farm(BigBoss)
+ Script:NewToggle("Farm Big Boss", "Farm Big Boss", function Farm(BigBoss)
     if state then      
 function farmBigBoss()
     while bigBossFarm do
@@ -74,7 +74,7 @@ else
 end)
 
 
-       Main:NewToggle("Auto Collect Scroll", "Auto Collect Scroll", function autoCollect(Scroll)
+       Script:NewToggle("Auto Collect Scroll", "Auto Collect Scroll", function autoCollect(Scroll)
     if state then
 function autoCollectScroll()
     while true do
