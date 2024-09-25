@@ -8,8 +8,8 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-local Section = MainTab:AddSection({
-	Name = "farm"
+local Section = Tab:AddSection({
+	Name = "Farm"
 })
 
 local player = game.Players.LocalPlayer
@@ -38,13 +38,39 @@ end
 
 
 
-MainTab:AddToggle({
+Tab:AddToggle({
 	Name = "Mission Farm",
 	Default = false,
 	Callback = function(Value)
 	_G.MissionFarm = Value
      missionFarm()
 	end
+})
+
+
+_G.FarmBigBoss = true
+
+function bigBossFarm()
+    while _G.FarmBigBoss == true do
+        for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
+            if bigBoss:FindFirstChild("Humanoid") then
+                bigBoss.Humanoid.Health = 0
+                wait(0.1)
+            end
+        end
+        wait(0.15)
+    end
+end
+   
+	
+
+Tab:AddToggle({
+	Name = "Farm Big Boss",
+	Default = false,
+	Callback = function(Value2)
+		_G.FarmBigBoss = Value2
+	bigBossFarm()
+end    
 })
 
 _G.AutCollectScroll() = true
@@ -63,36 +89,11 @@ end
   
 
 
-MainTab:AddToggle({
+Tab:AddToggle({
 	Name = "Auto Collect Scroll",
 	Default = false,
 	Callback = function(Value1)
 		_G.AutCollectScroll = Value1
     autocollectScroll()
 end
-})
-
-_G.FarmBigBoss = true
-
-function bigBossFarm()
-    while _G.FarmBigBoss == true do
-        for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
-            if bigBoss:FindFirstChild("Humanoid") then
-                bigBoss.Humanoid.Health = 0
-                wait(0.1)
-            end
-        end
-        wait(0.15)
-    end
-end
-   
-	
-
-MainTab:AddToggle({
-	Name = "Farm Big Boss",
-	Default = false,
-	Callback = function(Value2)
-		_G.FarmBigBoss = Value2
-	bigBossFarm()
-end    
 })
