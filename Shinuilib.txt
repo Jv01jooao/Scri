@@ -40,7 +40,7 @@ end
 
 
 MainTab:AddToggle({
-	Name = "This is a toggle!",
+	Name = "Mission Farm",
 	Default = false,
 	Callback = function(Value)
 	_G.MissionFarm = Valeu
