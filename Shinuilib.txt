@@ -1,5 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
+local Window = OrionLib:MakeWindow({Name = "jvshind hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 local Tab = Window:MakeTab({
@@ -7,7 +8,7 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-local Section = Tab:AddSection({
+local Section = MainTab:AddSection({
 	Name = "farm"
 })
 
@@ -19,7 +20,7 @@ local bigBossFarm = true
       
 
 
-Tab:AddToggle({
+MainTab:AddToggle({
 	Name = "This is a toggle!",
 	Default = false,
 	Callback = function(Value)
@@ -40,8 +41,8 @@ end
 
 
 
-Tab:AddToggle({
-	Name = "This is a toggle!",
+MainTab:AddToggle({
+	Name = "Auto Collect Scroll",
 	Default = false,
 	Callback = function(Value)
 		function autoCollectScroll()
@@ -61,8 +62,8 @@ end
 
 
 
-Tab:AddToggle({
-	Name = "This is a toggle!",
+MainTab:AddToggle({
+	Name = "Farm Big Boss",
 	Default = false,
 	Callback = function(Value)
 		function farmBigBoss()
@@ -82,10 +83,10 @@ end
 
 
 
-Tab:AddToggle({
-	Name = "This is a toggle!",
-	Default = false,
-	Callback = function(Value)
-		print(Value)
-	end    
-})
+--MainTab:AddToggle({
+--	Name = "This is a toggle!",
+--	Default = false,
+--	Callback = function(Value)
+	--	print(Value)
+--	end    
+--})
