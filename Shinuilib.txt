@@ -1,8 +1,14 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 local Section = Tab:AddSection({
-	Name = "Section"
+	Name = "farm"
 })
 
 local player = game.Players.LocalPlayer
@@ -10,105 +16,35 @@ local missionFarm = true
 local bossFarm = true
 local bigBossFarm = true
 
-
-ScriptTab:NewToggle("Farm Mission", "Farm Mission", function Farm(Mission)
-    if state then
-        function farmMission()
-    while missionFarm do
-        for _, mission in pairs(game:GetService("Workspace").Missions:GetChildren()) do
-            if mission:FindFirstChild("Green") then
-                mission.CFrame = player.Character.HumanoidRootPart.CFrame
-                wait(1)
-            end
-        end
-        wait(5)
-    end
-end
-   end = true
-    else
-     function farmMission()
-    while missionFarm do
-        for _, mission in pairs(game:GetService("Workspace").Missions:GetChildren()) do
-            if mission:FindFirstChild("Green") then
-                mission.CFrame = player.Character.HumanoidRootPart.CFrame
-                wait(1)
-            end
-        end
-        wait(5)
-    end
-end
-   end = false 
-    end
-end)
-
       
 
 
-ScriptTab:NewToggle("Farm Boss", "Farm Boss", function Farm(Boss)
-    if state then
-       function farmBoss()
-    while bossFarm do
-        for _, boss in pairs(game:GetService("Workspace").Bosses:GetChildren()) do
-            if boss:FindFirstChild("Humanoid") then
-                boss.Humanoid.Health = 0
+Tab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		function farmMission()
+    while missionFarm do
+        for _, mission in pairs(game:GetService("Workspace").Missions:GetChildren()) do
+            if mission:FindFirstChild("Green") then
+                mission.CFrame = player.Character.HumanoidRootPart.CFrame
                 wait(1)
             end
         end
-        wait(10)
+        wait(5)
     end
 end
-   end = true
-else
-  function farmBoss()
-    while bossFarm do
-        for _, boss in pairs(game:GetService("Workspace").Bosses:GetChildren()) do
-            if boss:FindFirstChild("Humanoid") then
-                boss.Humanoid.Health = 0
-                wait(1)
-            end
-        end
-        wait(10)
-    end
-end
-   end = false      
-    end
-end)
+   end
+	end    
+})
 
 
- ScriptTab:NewToggle("Farm Big Boss", "Farm Big Boss", function Farm(BigBoss)
-    if state then      
-function farmBigBoss()
-    while bigBossFarm do
-        for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
-            if bigBoss:FindFirstChild("Humanoid") then
-                bigBoss.Humanoid.Health = 0
-                wait(1)
-            end
-        end
-        wait(15)
-    end
-end
-   end = true
-else
-   function farmBigBoss()
-    while bigBossFarm do
-        for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
-            if bigBoss:FindFirstChild("Humanoid") then
-                bigBoss.Humanoid.Health = 0
-                wait(1)
-            end
-        end
-        wait(15)
-    end
-end
-   end = false     
-    end
-end)
 
-
-       ScriptTab:NewToggle("Auto Collect Scroll", "Auto Collect Scroll", function autoCollect(Scroll)
-    if state then
-function autoCollectScroll()
+Tab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		function autoCollectScroll()
     while true do
         for _, scroll in pairs(game:GetService("Workspace").Scrolls:GetChildren()) do
             if scroll:IsA("Part") then
@@ -119,22 +55,32 @@ function autoCollectScroll()
         wait(2)
     end
 end
-   end = true
-else
-   function autoCollectScroll()
-    while true do
-        for _, scroll in pairs(game:GetService("Workspace").Scrolls:GetChildren()) do
-            if scroll:IsA("Part") then
-                scroll.CFrame = player.Character.HumanoidRootPart.CFrame
-                wait(0.5)
+   end
+	end    
+})
+
+
+
+Tab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		function farmBigBoss()
+    while bigBossFarm do
+        for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
+            if bigBoss:FindFirstChild("Humanoid") then
+                bigBoss.Humanoid.Health = 0
+                wait(1)
             end
         end
-        wait(2)
+        wait(15)
     end
 end
-   end = false     
-    end
-end)
+   end
+	end    
+})
+
+
 
 Tab:AddToggle({
 	Name = "This is a toggle!",
