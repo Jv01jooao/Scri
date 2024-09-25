@@ -1,10 +1,9 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-
-local Window = Library.CreateLib("jvshin hub", "DarkTheme")
-local Tab = Window:NewTab("Main")
-local Section = Tab:NewSection("Script")
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 
+local Section = Tab:AddSection({
+	Name = "Section"
+})
 
 local player = game.Players.LocalPlayer
 local missionFarm = true
@@ -136,3 +135,11 @@ end
    end = false     
     end
 end)
+
+Tab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
