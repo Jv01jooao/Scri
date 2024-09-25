@@ -12,7 +12,7 @@ local bossFarm = true
 local bigBossFarm = true
 
 
-Script:NewToggle("Farm Mission", "Farm Mission", function Farm(Mission)
+ScriptTab:NewToggle("Farm Mission", "Farm Mission", function Farm(Mission)
     if state then
         function farmMission()
     while missionFarm do
@@ -45,7 +45,7 @@ end)
       
 
 
-Script:NewToggle("Farm Boss", "Farm Boss", function Farm(Boss)
+ScriptTab:NewToggle("Farm Boss", "Farm Boss", function Farm(Boss)
     if state then
        function farmBoss()
     while bossFarm do
@@ -76,7 +76,7 @@ end
 end)
 
 
- Script:NewToggle("Farm Big Boss", "Farm Big Boss", function Farm(BigBoss)
+ ScriptTab:NewToggle("Farm Big Boss", "Farm Big Boss", function Farm(BigBoss)
     if state then      
 function farmBigBoss()
     while bigBossFarm do
@@ -107,7 +107,7 @@ end
 end)
 
 
-       Script:NewToggle("Auto Collect Scroll", "Auto Collect Scroll", function autoCollect(Scroll)
+       ScriptTab:NewToggle("Auto Collect Scroll", "Auto Collect Scroll", function autoCollect(Scroll)
     if state then
 function autoCollectScroll()
     while true do
