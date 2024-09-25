@@ -26,13 +26,13 @@ function missionFarm()
         for _, mission in pairs(game:GetService("Workspace").Missions:GetChildren()) do
             if mission:FindFirstChild("Green") then
                 mission.CFrame = player.Character.HumanoidRootPart.CFrame
-                wait(1)
+                wait(0.1)
             end
         end
-        wait(5)
+        wait(0.5)
     end
 end
-   end
+   
 
 
 
@@ -42,7 +42,7 @@ MainTab:AddToggle({
 	Name = "Mission Farm",
 	Default = false,
 	Callback = function(Value)
-	_G.MissionFarm = Valeu
+	_G.MissionFarm = Value
      missionFarm()
 	end
 })
@@ -57,10 +57,10 @@ function autocollectScroll()
                 wait(0.5)
             end
         end
-        wait(2)
+        wait(0.2)
     end
 end
-   end
+  
 
 
 MainTab:AddToggle({
@@ -79,13 +79,13 @@ function bigBossFarm()
         for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
             if bigBoss:FindFirstChild("Humanoid") then
                 bigBoss.Humanoid.Health = 0
-                wait(1)
+                wait(0.1)
             end
         end
-        wait(15)
+        wait(0.15)
     end
 end
-   end
+   
 	
 
 MainTab:AddToggle({
