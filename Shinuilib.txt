@@ -17,15 +17,12 @@ local missionFarm = true
 local bossFarm = true
 local bigBossFarm = true
 
-      
 
+--farm mission
+_G.MissionFarm = true      
 
-MainTab:AddToggle({
-	Name = "This is a toggle!",
-	Default = false,
-	Callback = function(Value)
-		function farmMission()
-    while missionFarm do
+function missionFarm()
+    while _G.MissionFarm == true do
         for _, mission in pairs(game:GetService("Workspace").Missions:GetChildren()) do
             if mission:FindFirstChild("Green") then
                 mission.CFrame = player.Character.HumanoidRootPart.CFrame
@@ -41,12 +38,20 @@ end
 
 
 
+
 MainTab:AddToggle({
-	Name = "Auto Collect Scroll",
+	Name = "This is a toggle!",
 	Default = false,
 	Callback = function(Value)
-		function autoCollectScroll()
-    while true do
+	_G.MissionFarm = Valeu
+     missionFarm()
+	end
+})
+
+_G.AutCollectScroll() = true
+
+function autocollectScroll()
+    while _G.AutCollectScroll == true do
         for _, scroll in pairs(game:GetService("Workspace").Scrolls:GetChildren()) do
             if scroll:IsA("Part") then
                 scroll.CFrame = player.Character.HumanoidRootPart.CFrame
@@ -57,17 +62,21 @@ MainTab:AddToggle({
     end
 end
    end
-	end    
-})
-
 
 
 MainTab:AddToggle({
-	Name = "Farm Big Boss",
+	Name = "Auto Collect Scroll",
 	Default = false,
-	Callback = function(Value)
-		function farmBigBoss()
-    while bigBossFarm do
+	Callback = function(Value1)
+		_G.AutCollectScroll = Value1
+    autocollectScroll()
+end
+})
+
+_G.FarmBigBoss = true
+
+function bigBossFarm()
+    while _G.FarmBigBoss do
         for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
             if bigBoss:FindFirstChild("Humanoid") then
                 bigBoss.Humanoid.Health = 0
@@ -81,12 +90,11 @@ end
 	end    
 })
 
-
-
---MainTab:AddToggle({
---	Name = "This is a toggle!",
---	Default = false,
---	Callback = function(Value)
-	--	print(Value)
---	end    
---})
+MainTab:AddToggle({
+	Name = "Farm Big Boss",
+	Default = false,
+	Callback = function(Value2)
+		_G.FarmBigBoss = Value2
+	bigBossFarm()
+end    
+})
