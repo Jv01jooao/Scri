@@ -33,8 +33,7 @@ function missionFarm()
     end
 end
    end
-	end    
-})
+
 
 
 
@@ -76,7 +75,7 @@ end
 _G.FarmBigBoss = true
 
 function bigBossFarm()
-    while _G.FarmBigBoss do
+    while _G.FarmBigBoss == true do
         for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
             if bigBoss:FindFirstChild("Humanoid") then
                 bigBoss.Humanoid.Health = 0
@@ -87,8 +86,7 @@ function bigBossFarm()
     end
 end
    end
-	end    
-})
+	
 
 MainTab:AddToggle({
 	Name = "Farm Big Boss",
