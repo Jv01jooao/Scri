@@ -27,7 +27,7 @@ Script:NewToggle("Farm Mission", "Farm Mission", function Farm(Mission)
 end
    end
     else
-        print("Toggle Off")
+       
     end
 end)
 
@@ -49,7 +49,7 @@ Script:NewToggle("Farm Boss", "Farm Boss", function Farm(Boss)
 end
    end
 else
-        print("Toggle Off")
+        
     end
 end)
 
@@ -69,7 +69,7 @@ function farmBigBoss()
 end
    end
 else
-        print("Toggle Off")
+        
     end
 end)
 
@@ -89,6 +89,6 @@ function autoCollectScroll()
 end
    end
 else
-        print("Toggle Off")
+        
     end
 end)
