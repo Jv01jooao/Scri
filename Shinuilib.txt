@@ -25,9 +25,20 @@ Script:NewToggle("Farm Mission", "Farm Mission", function Farm(Mission)
         wait(5)
     end
 end
-   end
+   end = true
     else
-       
+     function farmMission()
+    while missionFarm do
+        for _, mission in pairs(game:GetService("Workspace").Missions:GetChildren()) do
+            if mission:FindFirstChild("Green") then
+                mission.CFrame = player.Character.HumanoidRootPart.CFrame
+                wait(1)
+            end
+        end
+        wait(5)
+    end
+end
+   end = false 
     end
 end)
 
@@ -47,9 +58,20 @@ Script:NewToggle("Farm Boss", "Farm Boss", function Farm(Boss)
         wait(10)
     end
 end
-   end
+   end = true
 else
-        
+  function farmBoss()
+    while bossFarm do
+        for _, boss in pairs(game:GetService("Workspace").Bosses:GetChildren()) do
+            if boss:FindFirstChild("Humanoid") then
+                boss.Humanoid.Health = 0
+                wait(1)
+            end
+        end
+        wait(10)
+    end
+end
+   end = false      
     end
 end)
 
@@ -67,9 +89,20 @@ function farmBigBoss()
         wait(15)
     end
 end
-   end
+   end = true
 else
-        
+   function farmBigBoss()
+    while bigBossFarm do
+        for _, bigBoss in pairs(game:GetService("Workspace").BigBosses:GetChildren()) do
+            if bigBoss:FindFirstChild("Humanoid") then
+                bigBoss.Humanoid.Health = 0
+                wait(1)
+            end
+        end
+        wait(15)
+    end
+end
+   end = false     
     end
 end)
 
@@ -87,8 +120,19 @@ function autoCollectScroll()
         wait(2)
     end
 end
-   end
+   end = true
 else
-        
+   function autoCollectScroll()
+    while true do
+        for _, scroll in pairs(game:GetService("Workspace").Scrolls:GetChildren()) do
+            if scroll:IsA("Part") then
+                scroll.CFrame = player.Character.HumanoidRootPart.CFrame
+                wait(0.5)
+            end
+        end
+        wait(2)
+    end
+end
+   end = false     
     end
 end)
