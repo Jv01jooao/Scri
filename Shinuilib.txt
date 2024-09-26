@@ -67,8 +67,8 @@ end
 Tab:AddToggle({
 	Name = "Farm Big Boss",
 	Default = false,
-	Callback = function(Value2)
-		_G.FarmBigBoss = Value2
+	Callback = function(Value)
+		_G.FarmBigBoss = Value
 	bigBossFarm()
 end    
 })
@@ -92,8 +92,8 @@ end
 Tab:AddToggle({
 	Name = "Auto Collect Scroll",
 	Default = false,
-	Callback = function(Value1)
-		_G.AutCollectScroll = Value1
+	Callback = function(Value)
+		_G.AutCollectScroll = Value
     autocollectScroll()
 end
 })
